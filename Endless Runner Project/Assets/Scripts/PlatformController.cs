@@ -14,6 +14,7 @@ public class PlatformController : MonoBehaviour {
 	private void Update () {
 		transform.Translate(Vector3.back * (speed * Time.deltaTime));
 
+		float length = transform.localScale.z;
 		if(transform.localPosition.z <= resetPosition){
 			Vector3 newPos = new Vector3(transform.position.x, transform.position.y, startPosition);
 			transform.position = newPos; 

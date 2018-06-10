@@ -16,12 +16,10 @@ public class PlayerInputController : MonoBehaviour {
 		// Gather input on which lane we should be on
 		if(Input.GetKeyDown(KeyCode.LeftArrow) ){
 			motor.MoveLane(false);
-			Debug.Log("Moving left");
 		}
 		
 		if(Input.GetKeyDown(KeyCode.RightArrow)){
 			motor.MoveLane(true);
-			Debug.Log("Moving left");
 		}
 	}
 }

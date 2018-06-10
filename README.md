@@ -1,2 +1,3 @@
 # EndlessRunner
-Desc
+### Controls
+Move using left/right arrow keys.

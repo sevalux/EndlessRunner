@@ -14,11 +14,11 @@ public class PlayerInputController : MonoBehaviour {
 	private void Update () {
 		
 		// Gather input on which lane we should be on
-		if(Input.GetKeyDown(KeyCode.LeftArrow) ){
+		if(Input.GetAxisRaw("Horizontal") == -1){
 			motor.MoveLane(false);
 		}
 		
-		if(Input.GetKeyDown(KeyCode.RightArrow)){
+		if(Input.GetAxisRaw("Horizontal") == 1){
 			motor.MoveLane(true);
 		}
 	}

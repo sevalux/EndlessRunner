@@ -58,7 +58,10 @@ public class PlayerMotor : MonoBehaviour {
 
 
 		moveVector.y = verticalVelocity;
-		moveVector.z = speed;
+
+
+		// To move the player forward
+		// moveVector.z = speed;
 
 		// Move player
 		controller.Move(moveVector * Time.deltaTime);

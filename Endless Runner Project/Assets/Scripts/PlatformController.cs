@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		// Start something
-	}
-	
+	[SerializeField] private float speed;
+	[SerializeField] private float resetPosition = -61f;
+
+	[SerializeField] private float startPosition = 120f;
+
+
 	// Update is called once per frame
-	void Update () {
-		// Update something
-		
+	private void Update () {
+		transform.Translate(Vector3.back * (speed * Time.deltaTime));
+
+		if(transform.localPosition.z <= resetPosition){
+			Vector3 newPos = new Vector3(transform.position.x, transform.position.y, startPosition);
+			transform.position = newPos; 
+		}
 	}
+		
 }

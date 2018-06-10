@@ -19,15 +19,7 @@ public class PlayerMotor : MonoBehaviour {
 
 	private void Update()
 	{
-		// Gather input on which lane we should be on
-		if(Input.GetKeyDown(KeyCode.LeftArrow) ){
-			MoveLane(false);
-		}
-		if(Input.GetKeyDown(KeyCode.RightArrow)){
-			MoveLane(true);
-		}
-
-		// Calculate where we should be.
+			// Calculate where we should be.
 		Vector3 targetPosition = transform.position.z * Vector3.forward;
 		if(desiredLane == 0)
 			targetPosition += Vector3.left * LANE_DISTANCE;
@@ -57,7 +49,7 @@ public class PlayerMotor : MonoBehaviour {
 			// Apply strong gravity over time
 			verticalVelocity -= gravity * Time.deltaTime;
 
-			// Fast fall mechanic
+			// Fast fall mechanic / slide aswell
 			if(Input.GetKeyDown(KeyCode.Space)){
 
 				verticalVelocity = -jumpForce;
@@ -72,7 +64,7 @@ public class PlayerMotor : MonoBehaviour {
 		controller.Move(moveVector * Time.deltaTime);
 	}
 
-	private void MoveLane(bool goingRight){
+	public void MoveLane(bool goingRight){
 
 		// Switch lanes based on bool
 		desiredLane += (goingRight) ? 1 : -1;

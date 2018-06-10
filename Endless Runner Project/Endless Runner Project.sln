@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless Runner Project", "Assembly-CSharp-firstpass.csproj", "{419DCEC5-6B34-02EA-3B07-9DE40617FD26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless Runner Project", "Assembly-CSharp-Editor-firstpass.csproj", "{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless Runner Project", "Assembly-CSharp.csproj", "{A75DFE77-5F7F-5E3B-7BF1-656AFD05F907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless Runner Project", "Assembly-CSharp-Editor-firstpass.csproj", "{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +17,14 @@ Global
 		{419DCEC5-6B34-02EA-3B07-9DE40617FD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{419DCEC5-6B34-02EA-3B07-9DE40617FD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{419DCEC5-6B34-02EA-3B07-9DE40617FD26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A75DFE77-5F7F-5E3B-7BF1-656AFD05F907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A75DFE77-5F7F-5E3B-7BF1-656AFD05F907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A75DFE77-5F7F-5E3B-7BF1-656AFD05F907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A75DFE77-5F7F-5E3B-7BF1-656AFD05F907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8125C7-A116-BEEF-D4EE-A4ABC25A186A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

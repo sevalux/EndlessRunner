@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 282840813}
   - component: {fileID: 282840811}
   - component: {fileID: 282840812}
+  - component: {fileID: 282840815}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -380,12 +381,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.29480913, y: -0, z: -0, w: 0.95555615}
-  m_LocalPosition: {x: 0, y: 4.8, z: -5.98}
+  m_LocalPosition: {x: 0, y: 5.42, z: 70.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 780001531}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 34.292, y: 0, z: 0}
+--- !u!114 &282840815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081ec366c1074014fb56d7cbb789dc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 780001531}
+  smoothing: 5
+  lookOffset: 0
+  xOffset: 1
 --- !u!1 &363270578
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +429,35 @@ Transform:
   m_Children:
   - {fileID: 1447464724}
   m_Father: {fileID: 780001531}
-  m_RootOrder: 1
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &375521214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 375521215}
+  m_Layer: 0
+  m_Name: Lane 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &375521215
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375521214}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1761950941}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &493494644
 Prefab:
@@ -551,8 +595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116bb09dddb26ba4785129cf40a2ae3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 6
-  gravity: 12
+  laneDistance: 3
+  jumpForce: 15
+  gravity: 40
   speed: 7
 --- !u!4 &780001531
 Transform:
@@ -564,7 +609,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.62, z: 76.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 282840814}
   - {fileID: 363270579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -670,6 +714,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1434051880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1434051881}
+  m_Layer: 0
+  m_Name: Lane 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434051881
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434051880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1761950941}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1436689658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1436689659}
+  m_Layer: 0
+  m_Name: Lane 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1436689659
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436689658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1761950941}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1447464723
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +855,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447464723}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1761950940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1324446265094782, guid: 6da859cc2d748bd499106cc8b8fe6eb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1761950941}
+  - component: {fileID: 1761950943}
+  m_Layer: 0
+  m_Name: ObstacleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761950941
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4151045777260454, guid: 6da859cc2d748bd499106cc8b8fe6eb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761950940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.65, z: 150}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1434051881}
+  - {fileID: 1436689659}
+  - {fileID: 375521215}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761950943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114113601492377396, guid: 6da859cc2d748bd499106cc8b8fe6eb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761950940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbc74539c382e54b80f5894045d436a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 1434051881}
+  - {fileID: 1436689659}
+  - {fileID: 375521215}
+  obstacles:
+  - {fileID: 1482787817704068, guid: e9a8873213a28324ea1d79a1ba35a25e, type: 2}
+  - {fileID: 1190835816020120, guid: 760b1ff0fca70c94f848583b4b9d957a, type: 2}
+  - {fileID: 1473961761688124, guid: dcddc4637a4040e42ad5081f6058f19f, type: 2}
+  spawnRate: 0.72
 --- !u!1001 &1836205431
 Prefab:
   m_ObjectHideFlags: 0

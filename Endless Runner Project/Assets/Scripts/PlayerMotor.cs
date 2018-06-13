@@ -7,7 +7,7 @@ public class PlayerMotor : MonoBehaviour {
 
 	private CharacterController controller;
 
-	[SerializeField] private const float LANE_DISTANCE = 3.0f; //Length of the assets.
+	[SerializeField] private float laneDistance = 3.0f; //Length of the assets.
 	[SerializeField] private float jumpForce = 4.0f;
 	[SerializeField] private float gravity = 12.0f;
 	[SerializeField] private float speed = 7.0f;
@@ -22,9 +22,9 @@ public class PlayerMotor : MonoBehaviour {
 			// Calculate where we should be.
 		Vector3 targetPosition = transform.position.z * Vector3.forward;
 		if(desiredLane == 0)
-			targetPosition += Vector3.left * LANE_DISTANCE;
+			targetPosition += Vector3.left * laneDistance;
 		else if(desiredLane == 2)
-			targetPosition += Vector3.right * LANE_DISTANCE;
+			targetPosition += Vector3.right * laneDistance;
 
 
 		// Calculate move delta

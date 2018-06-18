@@ -8,9 +8,8 @@ public class PlayerInputController : MonoBehaviour
     private Vector2 firstPressPos;
     private Vector2 secondPressPos;
     private Vector2 currentSwipe;
-    public PlayerMotor motor;
 
-    // private void Start() { StartCoroutine(CheckHorizontalSwipes()); Debug.Log("CHECKING SWIPES"); }
+    public PlayerMotor motor;
 
     private void Awake()
     {

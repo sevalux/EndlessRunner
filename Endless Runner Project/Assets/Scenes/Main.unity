@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -503,13 +503,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 282840810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081ec366c1074014fb56d7cbb789dc44, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ddeebbc67b59eb4785dfaca7eeed226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 780001531}
-  smoothing: 0.1
+  smoothing: 5
   lookOffset: 0
-  xOffset: -3
+  xOffset: 0
 --- !u!1 &335944178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,15 +2929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbc74539c382e54b80f5894045d436a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 1434051881}
-  - {fileID: 1436689659}
-  - {fileID: 375521215}
-  obstacles:
-  - {fileID: 1482787817704068, guid: e9a8873213a28324ea1d79a1ba35a25e, type: 2}
-  - {fileID: 1190835816020120, guid: 760b1ff0fca70c94f848583b4b9d957a, type: 2}
-  - {fileID: 1473961761688124, guid: dcddc4637a4040e42ad5081f6058f19f, type: 2}
-  spawnRate: 0.72
 --- !u!1001 &1836205431
 Prefab:
   m_ObjectHideFlags: 0

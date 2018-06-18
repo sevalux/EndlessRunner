@@ -57,12 +57,12 @@ public class PlayerInputController : MonoBehaviour
                 Debug.Log("Current Swipe: " + currentSwipe.x + " " + currentSwipe.y);
                 if (currentSwipe.y > 0f && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                 {
-                    // JUMP
+                    motor.Jump(); // JUMP
                     Debug.Log("Up Swipe");
                 }
                 else if (currentSwipe.y < 0f && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                 {
-                    // SLIDE
+                    motor.Slide(); // SLIDE
                     Debug.Log("Down Swipe");
                 }
                 else if (currentSwipe.x < 0f && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)

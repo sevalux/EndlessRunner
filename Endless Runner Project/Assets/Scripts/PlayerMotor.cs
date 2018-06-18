@@ -6,66 +6,77 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour {
 
 	private CharacterController controller;
+    private PlayerInputController input;
 
-	[SerializeField] private float laneDistance = 3.0f; //Length of the assets.
+    [SerializeField] private float laneDistance = 3.0f; //Length of the assets.
 	[SerializeField] private float jumpForce = 4.0f;
 	[SerializeField] private float gravity = 12.0f;
 	[SerializeField] private float speed = 7.0f;
 
 	private int desiredLane = 1; // 0 = left, 1 = middle, 2 = right
 	private float verticalVelocity;
-
-	private void Awake() { controller = GetComponent<CharacterController>(); }
-
-	private void Update()
-	{
-			// Calculate where we should be.
-		Vector3 targetPosition = transform.position.z * Vector3.forward;
-		if(desiredLane == 0)
-			targetPosition += Vector3.left * laneDistance;
-		else if(desiredLane == 2)
-			targetPosition += Vector3.right * laneDistance;
+    private bool jumpInput = false;
+    private bool slideInput = false;
 
 
-		// Calculate move delta
-		Vector3 moveVector = Vector3.zero;
+    private void Awake() { controller = GetComponent<CharacterController>(); }
 
-		// Where we should be, minus where we are to give us where we need to go to get there.
-		moveVector.x = (targetPosition - transform.position).normalized.x * speed;
-
-
-		// Calculate Y
-		if(IsGrounded()){
-
-			// If we are grounded, apply small gravity and allow jump.
-			verticalVelocity = -0.1f; // Static small gravity to keep player grounded.
-			if(Input.GetKeyDown(KeyCode.Space)){
-				
-				// Jump
-				verticalVelocity = jumpForce;
-			}
-		} else {
-
-			// Apply strong gravity over time
-			verticalVelocity -= gravity * Time.deltaTime;
-
-			// Fast fall mechanic / slide aswell
-			if(Input.GetKeyDown(KeyCode.Space)){
-
-				verticalVelocity = -jumpForce;
-			}
-		}
+    private void Update()
+    {
+        // Calculate where we should be.
+        Vector3 targetPosition = transform.position.z * Vector3.forward;
+        if (desiredLane == 0)
+            targetPosition += Vector3.left * laneDistance;
+        else if (desiredLane == 2)
+            targetPosition += Vector3.right * laneDistance;
 
 
-		moveVector.y = verticalVelocity;
+        // Calculate move delta
+        Vector3 moveVector = Vector3.zero;
+
+        // Where we should be, minus where we are to give us where we need to go to get there.
+        moveVector.x = (targetPosition - transform.position).normalized.x * speed;
 
 
-		// To move the player forward
-		// moveVector.z = speed;
+        // Calculate Y
+        if (IsGrounded())
+        {
 
-		// Move player
-		controller.Move(moveVector * Time.deltaTime);
-	}
+            // If we are grounded, apply small gravity and allow jump.
+            verticalVelocity = -0.1f; // Static small gravity to keep player grounded.
+            if (Input.GetKeyDown(KeyCode.Space) || jumpInput)
+            {
+
+                // Jump
+                verticalVelocity = jumpForce;
+                jumpInput = false;
+            }
+        }
+        else
+        {
+
+            // Apply strong gravity over time
+            verticalVelocity -= gravity * Time.deltaTime;
+
+            // Fast fall mechanic / slide aswell
+            if (Input.GetKeyDown(KeyCode.Space) || slideInput)
+            {
+
+                verticalVelocity = -jumpForce;
+                slideInput = false;
+            }
+        }
+
+
+        moveVector.y = verticalVelocity;
+
+
+        // To move the player forward
+        // moveVector.z = speed;
+
+        // Move player
+        controller.Move(moveVector * Time.deltaTime);
+    }
 
 	public void MoveLane(bool goingRight){
 
@@ -76,7 +87,19 @@ public class PlayerMotor : MonoBehaviour {
 		desiredLane = Mathf.Clamp(desiredLane, 0 ,2);
 	}
 
-	private bool IsGrounded(){
+    public void Jump()
+    {
+        // Game will jump on next frame
+        jumpInput = true;
+    }
+
+    public void Slide()
+    {
+        // Game will slide on next frame
+        slideInput = true;
+    }
+
+    private bool IsGrounded(){
 		
 		Ray groundRay = new Ray(
 			new Vector3(
